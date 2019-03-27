@@ -1,0 +1,516 @@
+<html>
+
+<head>
+
+    <title>FOSIL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #inf1, #inf2 {
+	        font-size: 19px;
+            left: 400px;
+            top: 500px;
+        }
+        
+        #refl {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            position: absolute;
+            left: 525px;
+            top: 300px;
+        }
+        
+        #exp {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            position: absolute;
+            left: 525px;
+            top: 500px;
+        }
+        
+        #const {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            position: absolute;
+            left: 725px;
+            top: 600px;
+        }
+        
+        #inv {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            position: absolute;
+            left: 910px;
+            top: 500px;
+        }
+        
+        #won {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            position: absolute;
+            left: 910px;
+            top: 290px;
+        }
+        
+        #con {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            position: absolute;
+            left: 725px;
+            top: 175px;
+        }
+        
+        #conte {
+            width: 180px;
+            height: 80px;
+            padding: 10px;
+            position: absolute;
+            left: 310px;
+            top: 300px;
+        }
+        
+        #wonte {
+            width: 180px;
+            height: 80px;
+            padding: 10px;
+            position: absolute;
+            left: 320px;
+            top: 523px;
+        }
+        
+        #invte {
+            width: 180px;
+            height: 80px;
+            padding: 10px;
+            position: absolute;
+            left: 509px;
+            top: 660px;
+        }
+        
+        #conste {
+            width: 180px;
+            height: 80px;
+            padding: 10px;
+            position: absolute;
+            left: 1050px;
+            top: 510px;
+        }
+        #expte {
+            width: 180px;
+            height: 80px;
+            padding: 10px;
+            position: absolute;
+            left: 1050px;
+            top: 300px;
+        }
+        
+        #refte {
+            width: 180px;
+            height: 80px;
+            padding: 10px;
+            position: absolute;
+            left: 875px;
+            top: 163px;
+        }
+        
+        h1 {
+            color: #9E2831;
+            vertical-align: middle;
+            font-size: 35px;
+        }
+        
+        p {
+            font-size: 15;
+        }
+        
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        #sp1 {
+            width: 270px;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+   
+
+    </style>
+    <script>
+        var score = 0;
+        var nameou = prompt("Name: ", "");
+
+        function begin() {
+
+
+            var s1 = document.getElementById("drag10");
+            s1.style.display = "none";
+
+            var s2 = document.getElementById("drag11");
+            s2.style.display = "none";
+
+            var s3 = document.getElementById("drag12");
+            s3.style.display = "none";
+
+            var s4 = document.getElementById("drag9");
+            s4.style.display = "none";
+
+            var s5 = document.getElementById("drag8");
+            s5.style.display = "none";
+
+            var s6 = document.getElementById("drag7");
+            s6.style.display = "none";
+            
+            var in2 = document.getElementById("inf2");
+            in2.style.display = "none";
+            
+            var cr = document.getElementById("sco");
+            cr.style.display = "none";
+            
+            var sss = document.getElementById("ss");
+            sss.style.display = "none";
+        }
+        function showScore() {
+            document.getElementById("scrd").innerHTML = nameou + " scored: " + String(score);
+               var sss = document.getElementById("ss");
+            sss.style.display = "block";
+            
+            var op = document.getElementById("yg");
+            op.value = score;
+        }
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+
+        }
+
+
+
+        function connect_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag1") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+
+            }
+
+        }
+
+        function wonder_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag2") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+
+            }
+
+        }
+
+        function investigate_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag3") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+            }
+
+        }
+
+        function construct_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag5") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+            }
+
+        }
+
+        function express_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag6") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+
+            }
+
+        }
+
+        function reflect_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag4") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+            }
+
+        }
+
+        function connectt_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag9") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+            }
+
+        }
+
+        function wondert_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag7") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+            }
+
+        }
+
+        function investigatet_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag8") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+            }
+
+        }
+
+        function constructt_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag10") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+            }
+
+        }
+
+        function expresst_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag12") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+            }
+
+        }
+
+        function reflectt_check(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+            if (data == "drag11") {
+                ele.setAttribute("draggable", "false");
+                score = score + 1;
+            }
+
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            var ele = document.getElementById(data);
+
+
+        }
+
+        function show() {
+            var p1 = document.getElementById('drag7');
+            p1.setAttribute('draggable', 'true');
+            p1.style.display = "block";
+
+            var p2 = document.getElementById('drag8');
+            p2.setAttribute('draggable', 'true');
+            p2.style.display = "block";
+
+            var p3 = document.getElementById('drag9');
+            p3.setAttribute('draggable', 'true');
+            p3.style.display = "block";
+
+            var p4 = document.getElementById('drag10');
+            p4.setAttribute('draggable', 'true');
+            p4.style.display = "block";
+
+            var p5 = document.getElementById('drag11');
+            p5.setAttribute('draggable', 'true');
+            p5.style.display = "block";
+
+            var p6 = document.getElementById('drag12');
+            p6.setAttribute('draggable', 'true');
+            p6.style.display = "block";
+            
+            var in1 = document.getElementById('inf1');
+            in1.style.display = "none";
+            
+            var in2 = document.getElementById('inf2');
+            in2.style.display = "block";
+            
+            var l = document.getElementById('le');
+            l.style.display = "none";
+            
+            var r = document.getElementById('ri');
+            r.style.display = "none";
+            
+             var cr = document.getElementById("sco");
+            cr.style.display = "block";
+            
+        }
+
+        
+    </script>
+</head>
+
+<body background="background.png" onLoad="begin()">
+    <h1>Framework of Skills for Inquiry Learning</h1>
+
+    <input type="button" onClick="history.go(0)" value="Reset">
+    
+    <img src="guide.png" width="150" height="90">
+    
+    <p id="inf1">Put the circles in the circular boxes</p>
+            
+    <p id="inf2">Put the rectangles in the rectangular boxes</p>
+
+    <div id="refl" ondrop="reflect_check(event)" ondragover="allowDrop(event)">
+            
+    </div>
+    
+  
+    <div id="exp" ondrop="express_check(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="const" ondrop="construct_check(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="inv" ondrop="investigate_check(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="won" ondrop="wonder_check(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="con" ondrop="connect_check(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="conte" ondrop="reflectt_check(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="wonte" ondrop="expresst_check(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="invte" ondrop="constructt_check(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="conste" ondrop="investigatet_check(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="expte" ondrop="wondert_check(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="refte" ondrop="connectt_check(event)" ondragover="allowDrop(event)"></div>
+
+
+    <div class="row">
+
+
+        <div class="column">
+            <p id="le">Left</p>
+            <img id="drag6" src="EXPRESS.png" draggable="true" ondragstart="drag(event)" width="90" height="90">
+
+            <img id="drag5" src="CONSTRUCT.png" draggable="true" ondragstart="drag(event)" width="90" height="90">
+
+            <img id="drag4" src="REFLECT.png" draggable="true" ondragstart="drag(event)" width="90" height="90">
+            <br>
+            <p id="ri">Right</p>
+            <img id="drag2" src="WONDER.png" draggable="true" ondragstart="drag(event)" width="90" height="90">
+
+            <img id="drag1" src="CONNECT.png" draggable="true" ondragstart="drag(event)" width="90" height="90">
+
+            <img id="drag3" src="INVESTIGATE.png" draggable="true" ondragstart="drag(event)" width="90" height="90">
+            <br>
+
+
+            <img id="drag10" src="constructt.png" draggable="false" ondragstart="drag(event)" width="150" height="60">
+
+            <img id="drag11" src="reflectt.png" draggable="false" ondragstart="drag(event)" width="150" height="60">
+
+            <img id="drag12" src="expresst.png" draggable="false" ondragstart="drag(event)" width="150" height="60">
+
+            <img id="drag7" src="wondert.png" draggable="false" ondragstart="drag(event)" width="150" height="60">
+
+            <img id="drag8" src="investigatet.png" draggable="false" ondragstart="drag(event)" width="150" height="60">
+
+            <img id="drag9" src="connectt.png" draggable="false" ondragstart="drag(event)" width="150" height="60">
+            
+
+        </div>
+
+        <div class="column">
+
+
+        </div>
+
+
+    </div>
+    <br><br><br>
+    <p id="inf1">Use this box to move the shapes</p>
+    <p id="inf1">around if you change your mind</p>
+    
+    <div id="sp1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <input id="cl" type="button" onClick="show()" value="NEXT">
+    <input id="sco" type="button" onClick="showScore()" value="Get Score">
+    <p id="scrd"></p> 
+    <form id="ss" target="_blank" action="https://io.adafruit.com/api/v2/webhooks/feed/TsBNmjSU3YMDFpehp9d8hKtwaMxA" method="post">
+    <label>
+        
+        <select name="value">
+            <option id="yg" >My Score</option>
+        </select>
+    </label>
+    <button type="submit">Submit your score!</button>
+</form>
+</body>
+
+</html>
